@@ -4,8 +4,8 @@ class Tooltip extends HTMLElement {
     this._tooltipContainer;
     this._tooltipText = 'Default tooltip text!'
     this.attachShadow({ mode: 'open' });
-    const template = document.querySelector('#tooltip-template');
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    // Template part of the custom element
+    this.shadowRoot.innerHTML = `<slot>Default Slot Text</slot><span> (?)</span>`;
   }
   
   // Custom element's lifecycle:
