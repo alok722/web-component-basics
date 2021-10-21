@@ -5,7 +5,17 @@ class Tooltip extends HTMLElement {
     this._tooltipText = 'Default tooltip text!'
     this.attachShadow({ mode: 'open' });
     // Template part of the custom element
-    this.shadowRoot.innerHTML = `<slot>Default Slot Text</slot><span> (?)</span>`;
+    this.shadowRoot.innerHTML = `
+      <style>
+        div {
+          background-color: #000;
+          color: #fff;
+          position: absolute;
+        }
+      </style>
+      <slot>Default Slot Text</slot>
+      <span> (?)</span>
+    `;
   }
   
   // Custom element's lifecycle:
@@ -33,9 +43,6 @@ class Tooltip extends HTMLElement {
   _showTooltip() {
     this._tooltipContainer = document.createElement('div');
     this._tooltipContainer.textContent = this._tooltipText;
-    this._tooltipContainer.style.position = 'absolute';
-    this._tooltipContainer.style.backgroundColor = 'black';
-    this._tooltipContainer.style.color = 'white';
     this.shadowRoot.appendChild(this._tooltipContainer);
   }
   _hideTooltip() {
