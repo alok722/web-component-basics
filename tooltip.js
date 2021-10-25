@@ -12,6 +12,9 @@ class Tooltip extends HTMLElement {
           color: #fff;
           position: absolute;
         }
+        ::slotted(span) {
+          background-color: blue;
+        }
       </style>
       <slot>Default Slot Text</slot>
       <span> (?)</span>
