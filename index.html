@@ -8,6 +8,9 @@
     <title>Web Components</title>
     <!-- Below Style won't alter web comp -->
     <style>
+        html {
+            
+        }
         span {
             color: red;
         }
@@ -17,11 +20,11 @@
 </head>
 
 <body>
-    <p>
+    <p class="hello">
         <uc-tooltip text="Custom tooltip text"><span>Web Components</span></uc-tooltip> are awesome!
     </p>
     <p>
-        <uc-tooltip>Default</uc-tooltip> tooltip test!
+        <uc-tooltip class="important">Default</uc-tooltip> tooltip test!
     </p>
     <p><uc-tooltip text="this is example of custom slot"></uc-tooltip></p>
     <a is="uc-confirm-link" href="https://google.com" target="_blank" rel="noopener noreferrer">Google?</a>
